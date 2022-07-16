@@ -93,5 +93,40 @@ $ git reset HEAD^ hello.php    # 回退 hello.php 文件的版本到上一个版
 $ git  reset  hashID           # 回退到指定版本
 ```
 
+### 文件忽略gitignore
+> 为什么需要忽略文件？
+> 一个常见的原因是 例如C文件 需要编译与运行等步骤，产生一系列中间文件。而文件管理只在意源文件。更重要的原因是如Java需要依赖一些的工具库，需将工具排除文件版本管理，否则会引入大量无关文件。
+```shell
+$vim .gitignore
+
+// .gitignore中忽略jpg文件。
+*.jpg
+```
+
+### **分支**
+#### 分支创建切换
+```git
+$ git branch bad-boy // 创建分支
+$ git checkout bad-boy // 切换到bad-boy分支
+
+$ git checkout -b bad-boy // 创建并切换到bad-boy分支
+$ git branch // 查看所有分支
+```
+
+#### 分支删除
+```git
+$ git branch -d bad-boy // 删除分支，若未合并则提示
+$ git checkout -D bad-boy // 直接删除分支
+```
+需注意 .gitignore中排除git管理的文件，若branch中删除，则master也无法回复。
+
+#### 分支合并
+```git
+$ git merge bad-boy // 当前分支与bad-boy分支合并
+```
+可能因版本冲突(行冲突)，需手动处理
+
+
+
 
 
