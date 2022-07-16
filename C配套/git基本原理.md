@@ -22,7 +22,7 @@
 ---
 
 
-## git实操
+## git本地操作
 ### 配置用户信息
 ```git
 git config --global user.name "wk"
@@ -73,6 +73,11 @@ git commit -m "fix(test): change content"
 > **常见的手段**是将工作区内容add到暂缓区，再一次commit提交。
 
 ### 版本查看
+```git
+git log
+```
+可见共两个版本，9b68b5376eb3fb54d574a5715249c1312a9f6b1c为唯一随机hash编号。
+![20220716212720](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716212720.png)
 
 
 
