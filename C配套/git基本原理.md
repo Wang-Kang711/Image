@@ -79,6 +79,19 @@ git log
 可见共两个版本，9b68b5376eb3fb54d574a5715249c1312a9f6b1c为唯一随机hash编号。
 ![20220716212720](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716212720.png)
 
+### 版本回退
+```git
+git reset --hard/--soft/--mixed(default) [head]
+
+--mixed 为默认，用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变。
+--hard 撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交
+--soft 索引（暂存区）和工作区不变
+
+// head 参数
+$ git reset HEAD^              # 回退所有内容到上一个版本  
+$ git reset HEAD^ hello.php    # 回退 hello.php 文件的版本到上一个版本  
+$ git  reset  hashID           # 回退到指定版本
+```
 
 
 
