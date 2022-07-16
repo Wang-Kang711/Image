@@ -43,7 +43,36 @@ git init
 git status
 ```
 ![20220716205330](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716205330.png)
-> 第一行表示当前所在分支，黄框为未追踪文件，即不用于git管理
+> 第一行表示当前所在分支，黄框为未追踪文件(untracked)，即不用于git管理
+
+### 追踪文件(将文件添加至缓存区)
+文件夹中所有.md文件 添加进缓存区
+```git
+git add *.md
+```
+此时再查看文件状态，则已经用于追踪
+![20220716210055](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716210055.png)
+
+###提交至本地仓库
+提交为一个固定版本。
+```git
+// -m为跳过vim编写提交说明。
+git commit -m "fix(test): change content"
+```
+提交说明可参考[commit提交风格](https://andyli.blog.csdn.net/article/details/86723431?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-86723431-blog-122706900.pc_relevant_multi_platform_whitelistv1_exp2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-86723431-blog-122706900.pc_relevant_multi_platform_whitelistv1_exp2&utm_relevant_index=1)
+
+此时查看状态信息，工作区已被清空
+![20220716211422](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716211422.png)
+
+> **一种特殊状态**
+> 当新增后从工作区add到暂缓区后，若对工作区再添加内容，此时查看文件状态。
+> ![20220716211916](https://raw.githubusercontent.com/Wang-Kang711/Image/main/common/20220716211916.png)
+> 此时存在两种状态，即后续可以commit，或者add(restore)。
+> 第一次add后则可以commit，但由于又添加了内容，因此工作区需要将新内容添加到暂缓区。
+> 若此时直接commit，则提交的是第一次add的内容。
+> **常见的手段**是将工作区内容add到暂缓区，再一次commit提交。
+
+### 版本查看
 
 
 
